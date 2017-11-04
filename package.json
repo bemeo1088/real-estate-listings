@@ -1,0 +1,29 @@
+{
+  "name": "real-estate-listings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "angular-route": "^1.6.6",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.0",
+    "pg": "^7.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bemeo1088/real-estate-listings.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bemeo1088/real-estate-listings/issues"
+  },
+  "homepage": "https://github.com/bemeo1088/real-estate-listings#readme"
+}
