@@ -15,7 +15,23 @@ app.use('/realEstate', realEstate);
 var mongoose = require('mongoose');
 // realestate is the name of our database
 // 27017 is the default mongo port number
-var databaseUrl = 'mongodb://localhost:27017/realestate';
+var mongoURI = '';
+
+
+// process.env.MONGODB_URI will only be defined if you
+// are running on Heroku
+if (process.env.MONGODB_URI != undefined) {
+    // use the string value of the environment variable
+    mongoURI = process.env.MONGODB_URI;
+} else {
+    // use the local database server
+    mongoURI = 'mongodb://localhost:27017/realestate';
+}
+
+mongoose.connect(mongoURI, {
+    useMongoClient: true
+});
+
 
 // then check if connection to mongoose if sucessful or fail
 mongoose.connection.on('connected', function () {
@@ -25,7 +41,7 @@ mongoose.connection.on('connected', function () {
 mongoose.connection.on('error', function () {
     console.log('mongoose connection failed');
 });
-mongoose.connect(databaseUrl);  // to link the var databseUrl above to mongoose
+mongoose.connect(mongoURI);  // to link the var mongoURI above to mongoose
 // Eventually, the mongoose code should be in a module
 
 /** ---------- START SERVER ---------- **/
