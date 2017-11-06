@@ -25,11 +25,11 @@ Run this command in your Terminal: mongoimport --db realestate --collection list
 
 # Hard Mode
 
-- [ ] Ability to delete an existing listings
+- [x] Ability to delete an existing listings
 - [ ] Move all HTTP/Ajax requests to Angular Service(s)
 
 # Pro Mode
 
 - [ ] Ability to update an existing record using a pop up (modal). You will need to research libraries that support modals (e.g. Sweet Alert or ui-bootstrap)
-- [ ] Display the least expensive property featured at the top of the page.
+- [x] Display the least expensive property featured at the top of the page.
 - [ ] Ability to search or filter by various parameters (try doing this in Mongo instead of Angular)
