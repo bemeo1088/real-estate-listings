@@ -41,7 +41,7 @@ mongoose.connection.on('connected', function () {
 mongoose.connection.on('error', function () {
     console.log('mongoose connection failed');
 });
-mongoose.connect(mongoURI);  // to link the var mongoURI above to mongoose
+//mongoose.connect(mongoURI);  // to link the var mongoURI above to mongoose
 // Eventually, the mongoose code should be in a module
 
 /** ---------- START SERVER ---------- **/
