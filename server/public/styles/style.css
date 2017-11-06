@@ -1,29 +1,52 @@
-.navbar-default {
-    background-image: none;
-    background-color: #FFF;
+.navbar-light {
+    background-image: url("images/realestate.jpg");
+    background-color: #e99a59;
     background-repeat: repeat-x;
     border-radius: 0px;
     box-shadow: none;
     border-left: none;
     border-right: none;
 }
+
 .panel-heading {
     color: rgb(145, 42, 14);
+    align-content: center;
 }
+h1 {
+   text-align: center;
+}
+
+.vertical-center {
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* .jumbotron {
+    padding-left: 100px;
+    padding-top: 10px;
+
+    vertical-align: middle;
+} */
+
 .navbar {
     margin-bottom: 0px;
     text-align: center;
     text-decoration-color: rgb(16, 66, 218);
     padding: 10px;
 }
+
 table {
     border-collapse: collapse;
     
 }
+
 td {
-    border: 1px solid black;
+    border: 1px solid rgba(61, 28, 28, 0.817);
     padding:10px;
 }
+
 th{
     border: 1px solid black;
     padding: 5px;
