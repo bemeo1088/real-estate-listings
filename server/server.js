@@ -17,6 +17,7 @@ var mongoose = require('mongoose');
 // 27017 is the default mongo port number
 var databaseUrl = 'mongodb://localhost:27017/realestate';
 
+// then check if connection to mongoose if sucessful or fail
 mongoose.connection.on('connected', function () {
     console.log('mongoose is connected!');
 });
@@ -24,7 +25,7 @@ mongoose.connection.on('connected', function () {
 mongoose.connection.on('error', function () {
     console.log('mongoose connection failed');
 });
-mongoose.connect(databaseUrl);
+mongoose.connect(databaseUrl);  // to link the var databseUrl above to mongoose
 // Eventually, the mongoose code should be in a module
 
 /** ---------- START SERVER ---------- **/

@@ -18,13 +18,20 @@ var RentalSchema = new Schema({
 
 // var Listing = mongoose.model('Listing', ListingSchema, 'listings');
 var Rental = mongoose.model('Rental', RentalSchema, 'rentals');
-var Listing = mongoose.model('Listing', ListingSchema, 'listings');
+var Listing = mongoose.model('Listing', ListingSchema, 'listings');  // the 3rd param is the plural name we want mongoose to use
+// the 1st param should always be "singular"
 
 // POST Route for ADD RENTAL
 router.post('/addRental', function (req, res) {
     console.log('req.body', req.body);
     var rentToAdd = new Rental(req.body);
-
+/* OR: if we need to add additional property
+var rentToAdd = req.body;
+var listing = new Listing ({
+    cost: rentToAdd.cost;
+    sqft: rentToAdd.sqft;
+    city: rentToAdd.city;
+}) */
     rentToAdd.save(function (err, data) {
         if (err) {
             console.log(err);
@@ -39,7 +46,7 @@ router.post('/addRental', function (req, res) {
 //GET route FOR RENTAL
 router.get('/forRental', function (req, res) {
 
-    Rental.find({}, function (err, foundRental) {
+    Rental.find({}, function (err, foundRental) {   // Rental must match var Rental above
         if (err) {
             console.log("ERROR! : ", err);
             res.sendStatus(500);
@@ -78,6 +85,7 @@ router.get('/forSale', function (req, res) {
         }
     }); // END FIND
 }); // END GET Route
+
 
 // DELETE Route for Rental
 router.delete('/forRental/:id', function (req, res) {

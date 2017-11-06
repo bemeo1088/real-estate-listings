@@ -1,5 +1,5 @@
 .navbar-light {
-    background-image: url("images/realestate.jpg");
+    background-image: url("public/images/realestate.jpg");
     background-color: #e99a59;
     background-repeat: repeat-x;
     border-radius: 0px;
@@ -13,7 +13,12 @@
     align-content: center;
 }
 h1 {
-   text-align: center;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 .vertical-center {
