@@ -1,22 +1,42 @@
+<table>
+  <thead>
+    <tr>
+      <th ng-click = "rc.sortData('rent')"> 
+        Rent <div ng-class="rc.getSortClass('rent')"> </div>
+      </th>
+      <th ng-click = "rc.sortData('sqft')"> 
+        Square Feet <div ng-class="rc.getSortClass('sqft')"> </div>
+      </th>
+      <th ng-click = "rc.sortData('city')">
+        City <div ng-class="rc.getSortClass('city')"> </div>
+      </th>
+      <th > Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="house in rc.realestate | orderBy: rc.sortColumn : rc.reverseSort">
+      <td> {{house.rent | currency}} </td>
+      <td> {{house.sqft}} </td>
+      <td> {{house.city}} </td>
+      <td> <button ng-click="rc.deleteRent(house._id)" class="btn btn-danger">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
 <!-- <div>
-    <div ng-repeat="house in rc.realestate">
-        {{house.cost}}
+    <ul ng-repeat="house in rc.realestate">
+        <li>
+          Rent:  ${{house.rent}}
+        </li>
+        <li>
+          Square feet:  {{house.sqft}}
+        </li>
+        <li>
+          City:  {{house.city}}
+        </li>
+        <button ng-click="rc.deleteRent(house._id)" class="btn btn-danger">Delete</button>
 
-    </div>
 
+    </ul>
 </div> -->
-
-<ul ng-repeat="house in rc.realestate">
-    <li>
-      Rent:  ${{house.rent}}
-    </li>
-    <li>
-      Square feet:  {{house.sqft}}
-    </li>
-    <li>
-      City:  {{house.city}}
-    </li>
-
-
-
-</ul>

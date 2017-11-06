@@ -1,14 +1,44 @@
-<ul ng-repeat="house in sc.realestate">
+<table>
+    <thead>
+        <tr>
+            <th ng-click="sc.sortData('cost')">
+                Cost
+                <div ng-class="sc.getSortClass('cost')"> </div>
+            </th>
+            <th ng-click="sc.sortData('sqft')">
+                Square Feet
+                <div ng-class="sc.getSortClass('sqft')"> </div>
+            </th>
+            <th ng-click="sc.sortData('city')">
+                City
+                <div ng-class="sc.getSortClass('city')"> </div>
+            </th>
+            <th> Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="house in sc.realestate | orderBy: sc.sortColumn : sc.reverseSort">
+            <td> {{house.cost | currency}} </td>
+            <td> {{house.sqft}} </td>
+            <td> {{house.city}} </td>
+            <td>
+                <button ng-click="sc.deleteSale(house._id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- <ul ng-repeat="house in sc.realestate">
     <li>
-       Cost: ${{house.cost}}
+        Cost: ${{house.cost}}
     </li>
     <li>
-       Square feet: {{house.sqft}}
+        Square feet: {{house.sqft}}
     </li>
     <li>
-       City: {{house.city}}
+        City: {{house.city}}
     </li>
+    <button ng-click="sc.deleteListing(house._id)" class="btn btn-danger">Delete</button>
 
 
-
-</ul>
+</ul> -->

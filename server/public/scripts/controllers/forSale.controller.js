@@ -15,5 +15,36 @@ myApp.controller('SaleController', function ($http) {
         });
     }
 
+    vm.sortColumn = "cost";
+    vm.reverseSort = false;
+    vm.sortData = function (column) {
+        vm.reverseSort = (vm.sortColumn == column) ? !vm.reverseSort : false;
+        vm.sortColumn = column;
+    }
+    vm.getSortClass = function (column) {
+        if (vm.sortColumn == column) {
+            return vm.reverseSort ? 'arrow-down' : 'arrow-up'
+        }
+        return "";
+    }
+
+    vm.deleteSale = function (saleId) {
+        $http.delete('/realestate/forSale/' + saleId).then(function (response) {
+            console.log('Success!');
+            vm.refreshSale();
+        }).catch(function (error) {
+            console.log('Failure!');
+        });
+    }
+
+    vm.refreshSale = function () {
+        $http.get('/realestate/forSale/').then(function (response) {
+            console.log('Success!');
+            vm.realestate = response.data;
+        }).catch(function (error) {
+            console.log('Failure!', error);
+        });
+    }
+    vm.refreshSale();    
     vm.forSale();
 });

@@ -79,4 +79,30 @@ router.get('/forSale', function (req, res) {
     }); // END FIND
 }); // END GET Route
 
+// DELETE Route for Rental
+router.delete('/forRental/:id', function (req, res) {
+    var rentId = req.params.id;
+    Rental.findByIdAndRemove({ "_id": rentId }, function (err, data) {
+        if (err) {
+            console.log(err);
+            res.sendStatus(500);
+        } else {
+            res.sendStatus(200);
+        }
+    });
+}); // END DELETE Route for Rental
+
+// DELETE Route for Listing
+router.delete('/forSale/:id', function (req, res) {
+    var saleId = req.params.id;
+    Listing.findByIdAndRemove({ "_id": saleId }, function (err, data) {
+        if (err) {
+            console.log(err);
+            res.sendStatus(500);
+        } else {
+            res.sendStatus(200);
+        }
+    });
+}); // END DELETE Route for Listing
+
 module.exports = router;

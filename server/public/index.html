@@ -28,18 +28,22 @@
     </head>
     <body ng-app="myApp">
         <div class="container">
-            <h1>REAL ESTATE LISTINGS</h1>
-                {{4===4}}
+            <div class="jumbotron">
+                <div class="panel-heading">
+                    <h1>SEARCHING YOUR NEW HOME</h1>
+                </div>
+                    <nav class="navbar navbar-default">
+                        <a href="/#!/forRental">For Rental</a>
 
-                <a href="/#!/forRental">For Rent</a>
+                        <a href="/#!/forSale">For Sales</a>
 
-                <a href="/#!/forSale">For Sale</a>
+                        <a href="/#!/addListing">Add Listings</a>
 
-                <a href="/#!/addListing">Add Listing</a>
-
-                <a href="/#!/addRental">Add Rentals</a>
-
-                <main ng-view></main>    
+                        <a href="/#!/addRental">Add Rentals</a>
+                    </nav>
+                        <main ng-view></main>    
+                    
+            </div>
         </div>
         
     </body>
